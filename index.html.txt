@@ -1,0 +1,1564 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Cimo Contabilidade Digital - Serviços de contabilidade, consultoria contábil e tributária, apoio administrativo e desenvolvimento profissional em Brasília - DF.">
+    <meta name="author" content="Cimo Contabilidade Digital">
+
+    <title>Cimo Contabilidade Digital | Contabilidade em Brasília - DF</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0b5ed7;
+            --primary-dark: #084298;
+            --secondary: #13a673;
+            --dark: #102a43;
+            --text: #52606d;
+            --light: #f5f9fc;
+            --white: #ffffff;
+            --border: #e6edf3;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #fff;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 15px rgba(0,0,0,.05);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--dark) !important;
+            font-size: 1.35rem;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin-right: 8px;
+        }
+
+        .nav-link {
+            color: #34495e !important;
+            font-weight: 500;
+            margin-left: 15px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(135deg, rgba(8, 66, 152, .97), rgba(11, 94, 215, .92)),
+                url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(19, 166, 115, .12);
+            right: -150px;
+            top: -100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 9px 17px;
+            border-radius: 30px;
+            background: rgba(255,255,255,.14);
+            border: 1px solid rgba(255,255,255,.25);
+            font-size: .9rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #67e8b1;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            color: rgba(255,255,255,.87);
+            line-height: 1.8;
+        }
+
+        .btn-main {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-main:hover {
+            background: #0e8d62;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light-custom {
+            padding: 13px 24px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.5);
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-outline-light-custom:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-size: .85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            color: var(--dark);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        /* SERVICES */
+        .services-section {
+            background: var(--light);
+        }
+
+        .service-card {
+            height: 100%;
+            padding: 35px 28px;
+            background: white;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            transition: .35s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(16,42,67,.10);
+            border-color: rgba(11,94,215,.15);
+        }
+
+        .service-icon {
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: #eaf3ff;
+            color: var(--primary);
+            font-size: 1.7rem;
+            margin-bottom: 22px;
+        }
+
+        .service-card h4 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ABOUT */
+        .about-image {
+            min-height: 480px;
+            border-radius: 25px;
+            background:
+                linear-gradient(rgba(8,66,152,.25), rgba(8,66,152,.25)),
+                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 25px;
+        }
+
+        .check-list li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .check-list i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        /* STATS */
+        .stats {
+            background: var(--dark);
+            color: white;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-box i {
+            font-size: 2rem;
+            color: #67e8b1;
+            margin-bottom: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .stat-text {
+            color: #b7c8d8;
+            font-size: .9rem;
+        }
+
+        /* CNAES */
+        .cnae-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            height: 100%;
+            transition: .3s;
+            background: white;
+        }
+
+        .cnae-card:hover {
+            box-shadow: 0 15px 35px rgba(0,0,0,.07);
+            transform: translateY(-4px);
+        }
+
+        .cnae-code {
+            display: inline-block;
+            background: #eaf3ff;
+            color: var(--primary);
+            padding: 6px 11px;
+            border-radius: 7px;
+            font-size: .8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .cnae-card h5 {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        /* INFO */
+        .info-section {
+            background: var(--light);
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .info-header {
+            padding: 22px 25px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+        }
+
+        .info-body {
+            padding: 25px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 13px 0;
+            border-bottom: 1px solid #edf1f5;
+        }
+
+        .info-row:last-child {
+            border-bottom: 0;
+        }
+
+        .info-label {
+            color: #78909c;
+            font-size: .9rem;
+        }
+
+        .info-value {
+            color: var(--dark);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: linear-gradient(135deg, #f7fbff, #eef9f5);
+        }
+
+        .contact-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            height: 100%;
+            border: 1px solid var(--border);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 17px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #eaf3ff;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .contact-item h6 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        .whatsapp {
+            background: #25D366;
+            color: white !important;
+            padding: 13px 20px;
+            border-radius: 9px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .whatsapp:hover {
+            background: #1ebc59;
+        }
+
+        /* PARTNER */
+        .partner-box {
+            padding: 40px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #0b5ed7, #084298);
+            color: white;
+        }
+
+        .partner-box h3 {
+            font-weight: 800;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #091d2e;
+            color: #9fb3c8;
+            padding: 60px 0 25px;
+        }
+
+        footer h5 {
+            color: white;
+            font-weight: 700;
+        }
+
+        footer a {
+            color: #9fb3c8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: .85rem;
+        }
+
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(37,211,102,.35);
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .floating-whatsapp:hover {
+            color: white;
+            transform: scale(1.08);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 991px) {
+            .hero {
+                min-height: 650px;
+            }
+
+            .nav-link {
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .about-image {
+                min-height: 350px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                min-height: 620px;
+            }
+
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .info-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .info-value {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center" href="#inicio">
+            <span class="brand-icon">
+                <i class="bi bi-calculator"></i>
+            </span>
+            Cimo Contabilidade
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobre">Sobre</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#atividades">Atividades</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <a href="https://wa.me/5561981527249"
+                       target="_blank"
+                       class="btn btn-main">
+                        <i class="bi bi-whatsapp me-1"></i>
+                        Fale conosco
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+
+    <div class="container hero-content">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <span class="hero-badge">
+                    <i class="bi bi-patch-check-fill me-2"></i>
+                    Contabilidade Digital em Brasília - DF
+                </span>
+
+                <h1>
+                    Contabilidade que
+                    <span>simplifica</span>
+                    o seu negócio.
+                </h1>
+
+                <p>
+                    Soluções contábeis, tributárias e administrativas
+                    para ajudar sua empresa a crescer com organização,
+                    segurança e tranquilidade.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <a href="#servicos" class="btn btn-main">
+                        Conheça nossos serviços
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+
+                    <a href="https://wa.me/5561981527249"
+                       target="_blank"
+                       class="btn btn-outline-light-custom">
+                        <i class="bi bi-whatsapp me-2"></i>
+                        Falar pelo WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- SERVIÇOS -->
+<section class="services-section" id="servicos">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                O que fazemos
+            </div>
+
+            <h2 class="section-title">
+                Soluções para sua empresa
+            </h2>
+
+            <p class="section-description mx-auto">
+                Conte com uma estrutura contábil preparada para
+                apoiar sua empresa em diferentes necessidades
+                administrativas, financeiras e tributárias.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-calculator"></i>
+                    </div>
+
+                    <h4>Contabilidade</h4>
+
+                    <p>
+                        Escrituração e acompanhamento contábil
+                        para manter sua empresa organizada e em
+                        conformidade com suas obrigações.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <h4>Consultoria Tributária</h4>
+
+                    <p>
+                        Orientação para questões contábeis e
+                        tributárias, contribuindo para uma gestão
+                        mais organizada e consciente.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+
+                    <h4>Apoio Administrativo</h4>
+
+                    <p>
+                        Serviços combinados de escritório e apoio
+                        administrativo para facilitar a rotina
+                        operacional da sua empresa.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h4>Gestão Empresarial</h4>
+
+                    <p>
+                        Informações e suporte para auxiliar
+                        empresários na organização e acompanhamento
+                        das atividades do negócio.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-megaphone"></i>
+                    </div>
+
+                    <h4>Promoção de Vendas</h4>
+
+                    <p>
+                        Atividades relacionadas à promoção de vendas
+                        e apoio às estratégias comerciais da empresa.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+
+                    <h4>Treinamentos</h4>
+
+                    <p>
+                        Treinamento voltado ao desenvolvimento
+                        profissional e gerencial, contribuindo
+                        para o aprimoramento das equipes.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOBRE -->
+<section id="sobre">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <div class="about-image"></div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="section-label">
+                    Sobre a Cimo
+                </div>
+
+                <h2 class="section-title">
+                    Uma contabilidade próxima do seu negócio
+                </h2>
+
+                <p>
+                    A <strong>Cimo Contabilidade Digital LTDA</strong>
+                    atua com serviços de contabilidade, consultoria
+                    contábil e tributária e apoio administrativo.
+                </p>
+
+                <p>
+                    Fundada em 02 de agosto de 2022, a empresa está
+                    localizada em Brasília, no Distrito Federal, e
+                    possui situação cadastral ativa.
+                </p>
+
+                <p>
+                    Nosso propósito é tornar a rotina empresarial
+                    mais organizada, oferecendo informações e
+                    soluções que auxiliem nossos clientes na gestão
+                    de seus negócios.
+                </p>
+
+                <ul class="check-list">
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Atendimento personalizado</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Soluções contábeis e tributárias</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Atendimento digital e próximo</span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Foco na organização empresarial</span>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NÚMEROS -->
+<section class="stats">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <i class="bi bi-calendar-check"></i>
+                    <div class="stat-number">2022</div>
+                    <div class="stat-text">Ano de fundação</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <i class="bi bi-building"></i>
+                    <div class="stat-number">LTDA</div>
+                    <div class="stat-text">Natureza jurídica</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <i class="bi bi-check-circle"></i>
+                    <div class="stat-number">Ativa</div>
+                    <div class="stat-text">Situação cadastral</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-3">
+                <div class="stat-box">
+                    <i class="bi bi-award"></i>
+                    <div class="stat-number">CRC</div>
+                    <div class="stat-text">DF-003436/O</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ATIVIDADES -->
+<section id="atividades">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                CNAEs
+            </div>
+
+            <h2 class="section-title">
+                Nossas atividades
+            </h2>
+
+            <p class="section-description mx-auto">
+                Confira as atividades econômicas registradas
+                para a Cimo Contabilidade Digital.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        ATIVIDADE PRINCIPAL
+                    </span>
+
+                    <h5>
+                        Atividades de contabilidade
+                    </h5>
+
+                    <p class="mb-0">
+                        <strong>69.20-6-01</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        ATIVIDADE SECUNDÁRIA
+                    </span>
+
+                    <h5>
+                        Treinamento em desenvolvimento
+                        profissional e gerencial
+                    </h5>
+
+                    <p class="mb-0">
+                        <strong>85.99-6-04</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        ATIVIDADE SECUNDÁRIA
+                    </span>
+
+                    <h5>
+                        Serviços combinados de escritório
+                        e apoio administrativo
+                    </h5>
+
+                    <p class="mb-0">
+                        <strong>82.11-3-00</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        ATIVIDADE SECUNDÁRIA
+                    </span>
+
+                    <h5>
+                        Promoção de vendas
+                    </h5>
+
+                    <p class="mb-0">
+                        <strong>73.19-0-02</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-code">
+                        ATIVIDADE SECUNDÁRIA
+                    </span>
+
+                    <h5>
+                        Consultoria e auditoria
+                        contábil e tributária
+                    </h5>
+
+                    <p class="mb-0">
+                        <strong>69.20-6-02</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INFORMAÇÕES DA EMPRESA -->
+<section class="info-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <div class="section-label">
+                Informações empresariais
+            </div>
+
+            <h2 class="section-title">
+                Dados da empresa
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <div class="info-card">
+
+                    <div class="info-header">
+                        <i class="bi bi-building me-2"></i>
+                        Informações de Registro
+                    </div>
+
+                    <div class="info-body">
+
+                        <div class="info-row">
+                            <span class="info-label">Razão Social</span>
+                            <span class="info-value">
+                                Cimo Contabilidade Digital LTDA
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Nome Fantasia</span>
+                            <span class="info-value">
+                                Cimo Contabilidade Digital
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">CNPJ</span>
+                            <span class="info-value">
+                                47.380.242/0001-11
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Data de Abertura</span>
+                            <span class="info-value">
+                                02/08/2022
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Porte</span>
+                            <span class="info-value">
+                                Micro Empresa
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Natureza Jurídica</span>
+                            <span class="info-value">
+                                Sociedade Empresária Limitada
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Situação</span>
+                            <span class="info-value text-success">
+                                Ativa
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Capital Social</span>
+                            <span class="info-value">
+                                R$ 1.000,00
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="info-card">
+
+                    <div class="info-header">
+                        <i class="bi bi-person-badge me-2"></i>
+                        Responsável
+                    </div>
+
+                    <div class="info-body">
+
+                        <div class="info-row">
+                            <span class="info-label">
+                                Sócio-Administrador
+                            </span>
+
+                            <span class="info-value">
+                                Cleiton Pereira dos Santos
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">
+                                Qualificação
+                            </span>
+
+                            <span class="info-value">
+                                Sócio-Administrador
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">
+                                CRC
+                            </span>
+
+                            <span class="info-value">
+                                DF-003436/O
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">
+                                Opção pelo MEI
+                            </span>
+
+                            <span class="info-value">
+                                Não
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">
+                                Simples Nacional
+                            </span>
+
+                            <span class="info-value text-success">
+                                Sim
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">
+                                Data de opção pelo Simples
+                            </span>
+
+                            <span class="info-value">
+                                02/08/2022
+                            </span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">
+                                Tipo
+                            </span>
+
+                            <span class="info-value">
+                                Matriz
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTATO -->
+<section class="contact-section" id="contato">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <div class="section-label">
+                    Fale conosco
+                </div>
+
+                <h2 class="section-title">
+                    Vamos conversar sobre sua empresa?
+                </h2>
+
+                <p class="section-description">
+                    Entre em contato com a Cimo Contabilidade Digital
+                    para saber mais sobre nossos serviços e soluções
+                    para empresas.
+                </p>
+
+                <div class="contact-card mt-4">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h6>E-mail</h6>
+
+                            <a href="mailto:clemerson@novadvocaci.site">
+                                clemerson@novadvocaci.site
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+
+                        <div>
+                            <h6>Telefone</h6>
+
+                            <a href="tel:+5561981527249">
+                                (61) 98152-7249
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+
+                        <div>
+                            <h6>Endereço</h6>
+
+                            <span>
+                                Entre Quadra EQNL 10/12 Bloco C,
+                                Sala 201<br>
+                                Taguatinga Norte<br>
+                                Brasília - DF<br>
+                                CEP 72155-523
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="d-flex flex-wrap gap-2">
+
+                        <a href="https://wa.me/5561981527249"
+                           target="_blank"
+                           class="whatsapp">
+                            <i class="bi bi-whatsapp"></i>
+                            WhatsApp
+                        </a>
+
+                        <a href="mailto:clemerson@novadvocaci.site"
+                           class="btn btn-outline-primary">
+                            <i class="bi bi-envelope me-1"></i>
+                            Enviar e-mail
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="contact-card h-100">
+
+                    <h4 class="fw-bold mb-4"
+                        style="color: var(--dark);">
+                        Como chegar
+                    </h4>
+
+                    <div class="ratio ratio-4x3 rounded overflow-hidden">
+
+                        <iframe
+                            src="https://www.google.com/maps?q=EQNL%2010%2F12%20Bloco%20C%20Sala%20201%2C%20Taguatinga%20Norte%2C%20Bras%C3%ADlia%20DF&output=embed"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+
+                    </div>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=EQNL+10%2F12+Bloco+C+Sala+201+Taguatinga+Norte+Brasilia+DF"
+                        target="_blank"
+                        class="btn btn-main mt-3 w-100">
+
+                        <i class="bi bi-map me-2"></i>
+                        Abrir no Google Maps
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section>
+
+    <div class="container">
+
+        <div class="partner-box">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-8">
+
+                    <h3>
+                        Sua empresa merece uma contabilidade
+                        organizada e próxima.
+                    </h3>
+
+                    <p class="mb-0 mt-3 text-white-50">
+                        Conte com a Cimo Contabilidade Digital
+                        para apoiar a rotina contábil, tributária
+                        e administrativa do seu negócio.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 text-lg-end">
+
+                    <a href="https://wa.me/5561981527249"
+                       target="_blank"
+                       class="btn btn-light btn-lg">
+
+                        <i class="bi bi-whatsapp me-2 text-success"></i>
+                        Fale conosco
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <h5>
+                    <i class="bi bi-calculator me-2"></i>
+                    Cimo Contabilidade Digital
+                </h5>
+
+                <p class="mt-3">
+                    Soluções contábeis, tributárias e
+                    administrativas para empresas que
+                    buscam organização e tranquilidade
+                    para cuidar do seu negócio.
+                </p>
+
+                <p class="mb-0">
+                    <strong>CNPJ:</strong>
+                    47.380.242/0001-11
+                </p>
+
+            </div>
+
+
+            <div class="col-6 col-lg-3">
+
+                <h5>Links</h5>
+
+                <ul class="list-unstyled mt-3">
+
+                    <li class="mb-2">
+                        <a href="#inicio">Início</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#servicos">Serviços</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#sobre">Sobre</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#atividades">Atividades</a>
+                    </li>
+
+                    <li class="mb-2">
+                        <a href="#contato">Contato</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-6 col-lg-4">
+
+                <h5>Contato</h5>
+
+                <ul class="list-unstyled mt-3">
+
+                    <li class="mb-3">
+                        <i class="bi bi-telephone me-2"></i>
+                        <a href="tel:+5561981527249">
+                            (61) 98152-7249
+                        </a>
+                    </li>
+
+                    <li class="mb-3">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:clemerson@novadvocaci.site">
+                            clemerson@novadvocaci.site
+                        </a>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-geo-alt me-2"></i>
+                        Brasília - DF
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom text-center">
+
+            <p class="mb-1">
+                © 2026 Cimo Contabilidade Digital LTDA.
+                Todos os direitos reservados.
+            </p>
+
+            <small>
+                CNPJ 47.380.242/0001-11 · CRC DF-003436/O
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5561981527249"
+   target="_blank"
+   class="floating-whatsapp"
+   aria-label="Falar pelo WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
